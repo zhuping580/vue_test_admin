@@ -93,51 +93,57 @@ export const constantRoutes = [
   {
     path: '/nested',
     component: Layout,
-    redirect: '/nested/menu1',
+    redirect: '/nested/interface',
     name: 'Nested',
     meta: {
-      title: 'Nested',
+      title: '接口测试',
       icon: 'nested'
     },
     children: [
       {
-        path: 'menu1',
-        component: () => import('@/views/nested/menu1/index'), // Parent router-view
-        name: 'Menu1',
-        meta: { title: 'Menu1' },
+        path: 'interface',
+        component: () => import('@/views/nested/interface/index'), // Parent router-view
+        name: 'Interface',
+        meta: { title: '数据模型' },
         children: [
           {
-            path: 'menu1-1',
-            component: () => import('@/views/nested/menu1/menu1-1'),
-            name: 'Menu1-1',
-            meta: { title: 'Menu1-1' }
+            path: 'list',
+            component: () => import('@/views/nested/interface/list'),
+            name: 'list',
+            meta: { title: '接口列表' }
           },
           {
-            path: 'menu1-2',
-            component: () => import('@/views/nested/menu1/menu1-2'),
-            name: 'Menu1-2',
-            meta: { title: 'Menu1-2' },
-            children: [
-              {
-                path: 'menu1-2-1',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-1'),
-                name: 'Menu1-2-1',
-                meta: { title: 'Menu1-2-1' }
-              },
-              {
-                path: 'menu1-2-2',
-                component: () => import('@/views/nested/menu1/menu1-2/menu1-2-2'),
-                name: 'Menu1-2-2',
-                meta: { title: 'Menu1-2-2' }
-              }
-            ]
-          },
-          {
-            path: 'menu1-3',
-            component: () => import('@/views/nested/menu1/menu1-3'),
-            name: 'Menu1-3',
-            meta: { title: 'Menu1-3' }
+            path: 'detail',
+            component: () => import('@/views/nested/interface/detail'),
+            name: 'detail',
+            meta: { title: '接口详情' }
           }
+          // {
+          //   path: 'interface-2',
+          //   component: () => import('@/views/nested/interface/interface-2'),
+          //   name: 'Interface-2',
+          //   meta: { title: 'Interface-2' },
+          //   children: [
+          //     {
+          //       path: 'interface-2-1',
+          //       component: () => import('@/views/nested/interface/interface-2/interface-2-1'),
+          //       name: 'Interface-2-1',
+          //       meta: { title: 'Interface-2-1' }
+          //     },
+          //     {
+          //       path: 'interface-2-2',
+          //       component: () => import('@/views/nested/interface/interface-2/interface-2-2'),
+          //       name: 'Interface-2-2',
+          //       meta: { title: 'Interface-2-2' }
+          //     }
+          //   ]
+          // },
+          // {
+          //   path: 'interface-3',
+          //   component: () => import('@/views/nested/interface/interface-3'),
+          //   name: 'Interface-3',
+          //   meta: { title: 'Interface-3' }
+          // }
         ]
       },
       {
